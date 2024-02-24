@@ -1,5 +1,5 @@
 print("music player")
-print("v0.1(beta)")
+print("v0.1")
 import time
 from pygame import mixer
 from tkinter import filedialog
