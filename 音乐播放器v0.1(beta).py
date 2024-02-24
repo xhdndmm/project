@@ -2,11 +2,8 @@ print("音乐播放器")
 print("v0.1(beta)")
 import time
 import pygame
-import tkinter as tk
 from tkinter import filedialog
 import librosa
-root = tk.Tk()
-root.withdraw()
 while True:
     file = filedialog.askopenfilename()
     duration = librosa.get_duration(filename=file)
