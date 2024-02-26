@@ -1,4 +1,3 @@
-#开发环境：Ubuntu 22.04.4 LTS python3.10.12
 import wget
 from time import sleep
 while True :
