@@ -1,3 +1,5 @@
+print("下载器")
+print("v0.1")
 import wget
 from time import sleep
 while True :
@@ -8,3 +10,6 @@ while True :
     except Exception as e:
         print(e)
         sleep(3)
+    answer = input("下载完毕，关闭程序？（y/n）")
+    if answer == "y":
+        break
