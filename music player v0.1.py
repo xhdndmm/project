@@ -1,3 +1,4 @@
+#目前已知BUG：似乎无法在linux下运行（测试环境：Ubuntu 22.04.4 LTS)
 print("music player")
 print("v0.1")
 import time
@@ -8,10 +9,10 @@ while True:
     file = filedialog.askopenfilename()
     duration = get_duration(path=file)
     mixer.init()
-    print('now playing',file)
+    print('正在播放：',file)
     mixer.music.load(file)
     mixer.music.play()
     time.sleep(duration)
     mixer.music.stop()
-    print("after playing please select another file to play")
+    print("播放完毕 请选择其他文件播放")
     time.sleep(1)
