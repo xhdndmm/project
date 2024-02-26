@@ -1,12 +1,12 @@
 print("下载器")
 print("v0.1")
-import wget
+from wget import download
 from time import sleep
 while True :
     try:
         url = input("下载链接？")
         where = input("下载到哪个路径？")
-        wget.download(url,where)
+        download(url,where)
     except Exception as e:
         print(e)
         sleep(3)
