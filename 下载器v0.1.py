@@ -13,4 +13,5 @@ while True :
         sleep(3)
     answer = input("下载完毕，关闭程序？（y/n）")
     if answer == "y":
+        sleep(1)
         break

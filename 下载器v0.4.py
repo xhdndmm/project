@@ -56,4 +56,5 @@ while True:
             download(answer6)    
     answer2 = input("完成下载，关闭程序？（y/n）")
     if answer2 == "y":
+        sleep(1)
         break
