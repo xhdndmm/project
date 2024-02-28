@@ -6,9 +6,8 @@ from wget import download
 from time import sleep
 import urllib.request
 import pyperclip
-def download (url):
+def download (url1):
     try:
-        url1 = url
         file = input("下载到哪个路径？")
         print("尝试下载",url1)
         download(url1,file)
