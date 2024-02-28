@@ -45,14 +45,14 @@ while True:
         answer4 = input("下载链接？")
         download(answer4)
     else:
-            print("检测到剪贴板内容")
-            print("具体为：",things)
-            answer5 = input("是否要使用？（y/n）",)
-            if answer5 == "y":
-                download(things)
-            else:
-                answer6 = input("下载链接？")
-                download(answer6)    
+        print("检测到剪贴板内容")
+        print("具体为：",things)
+        answer5 = input("是否要使用？（y/n）",)
+        if answer5 == "y":
+            download(things)
+        else:
+            answer6 = input("下载链接？")
+            download(answer6)    
     answer2 = input("完成下载，关闭程序？（y/n）")
     if answer2 == "y":
         break
