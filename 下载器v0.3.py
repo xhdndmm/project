@@ -33,7 +33,7 @@ while True :
                             download(url2,file)
                         except Exception as err:
                             print("依旧报错，报错为：",err) 
-                            print("请检查链接是否有效或网络是否有问题")
+                            print("请检查链接是否有效或网络是否有问题或下载位置是否正确")
                 except urllib.error.URLError as ex:
                     print("网络连接异常：",ex)
                     print("请检查网络连接")
