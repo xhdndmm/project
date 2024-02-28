@@ -19,6 +19,7 @@ while True :
             except Exception as er:
                 print("还是报错，报错为：",er)
                 print("尝试自动检查网络状况...")
+                sleep(1)
                 try:
                     urllib.request.urlopen("http://www.baidu.com", timeout=5)
                     print("网络连接正常")
@@ -33,7 +34,7 @@ while True :
                             print("依旧报错，报错为：",err) 
                             print("请检查链接是否有效或网络是否有问题")
                 except urllib.error.URLError as ex:
-                    print("网络连接异常：" + str(ex))
+                    print("网络连接异常：",ex)
                     print("请检查网络连接")
     answer2 = input("完成下载，关闭程序？（y/n）")
     if answer2 == "y":
