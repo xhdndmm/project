@@ -21,11 +21,11 @@ def networktest ():
     
 def searchcopy ():
     try:
-        copy = pandas.read_clipboard
+        searchcopyfile = str(pandas.read_clipboard)
     except Exception as er:
         print("未找到剪贴板内容...")
     else:
-        return copy
+        return searchcopyfile
 
 def main (url,file):
     try:
@@ -45,12 +45,12 @@ def main (url,file):
         print("如果还有报错那么请尝试关闭程序再打开或者重启电脑")
 
 def start ():
-    file = input("下载到哪个路径？")
+    files = input("下载到哪个路径？")
     if input("是否检测剪贴板内链接？（y/n）") == "y":
-            main(searchcopy(),file)
+        main(searchcopy(),files)
     else:
         url = input("下载链接？")
-        main(url,file)
+        main(url,files)
 
 while True:
     start()
