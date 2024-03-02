@@ -1,12 +1,11 @@
 print("已知小问题：似乎此程序会先下载到根程序一个文件夹的地方 再移动到指定路径 且如果下载中途关闭程序 那么缓存还会保存")
-print("已知BUG：似乎无法在linux下读取剪贴板（测试环境：Ubuntu 22.04.4 LTS python3.10.12）")
 print("下载器")
 print("v0.4")
 print("此版本为较大更新 优化了代码流程并增加了读取剪贴板的功能")
 
 import wget
 import urllib
-import pandas
+import pyperclip
 
 def download(url,file):
     wget.download(url,file)
@@ -21,10 +20,9 @@ def networktest ():
     
 def searchcopy():
     try:
-        clipboard_content = str(pandas.read_clipboard())
+        clipboard_content = pyperclip.paste()
     except Exception:
         print("未找到剪贴板内容...")
-        return None
     else:
         return clipboard_content
 
@@ -48,7 +46,7 @@ def main (url,file):
 def start ():
     files = input("下载到哪个路径？")
     if input("是否检测剪贴板内链接？（y/n）") == "y":
-        url = searchcopy()
+        url = str(searchcopy())
         if url is not None:
             main(url,files)  
         else:    
