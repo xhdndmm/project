@@ -15,16 +15,14 @@ def networktest ():
         urllib.request.urlopen("http://www.baidu.com", timeout=5)
     except Exception:
         print("网络异常")
+        print("请检查网络连接是否正常")
     else:
         print("网络正常")
+        print("请尝试更改下载链接或下载位置")
     
 def searchcopy():
-    try:
-        clipboard_content = pyperclip.paste()
-    except Exception:
-        print("未找到剪贴板内容...")
-    else:
-        return clipboard_content
+    clipboard_content = pyperclip.paste()
+    return clipboard_content
 
 def main (url,file):
     try:
