@@ -8,9 +8,6 @@ import wget
 import urllib
 import pyperclip
 
-def download(url,file):
-    wget.download(url,file)
-
 def networktest ():
     try:
         urllib.request.urlopen("http://www.baidu.com", timeout=5)
@@ -27,15 +24,15 @@ def searchcopy():
 
 def main (url,file):
     try:
-        download(url,file)
+        wget.download(url,file)
     except Exception as er:
         print("检测到异常 可能因链接或路径有错 或因网络异常 或因未识别到剪贴板内容 程序无法继续进行 报错具体为：",er)
         print("但此程序提供了几个解决办法")
         if input("是否要更换链接和路径？（y/n）") == "y":
-            answer1 = input("下载链接？")
-            answer2 =input("下载到哪个路径？")
+            url = input("下载链接？")
+            file =input("下载到哪个路径？")
             try:
-                download(answer1,answer2)
+                wget.download(url,file)
             except Exception as er:
                 print("又错啦 具体为：",er)
         if input("是否要进行网络检测（y/n）") == "y":
@@ -55,7 +52,8 @@ def start ():
         url = input("下载链接？")
         main(url,files)
 
-while True:
-    start()
-    if input("是否要关闭程序（y/n）") == "y":
-        break
+if __name__ == '__main__':
+    while True:
+        start()
+        if input("是否要关闭程序（y/n）") == "y":
+            break
