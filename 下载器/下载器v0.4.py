@@ -2,6 +2,7 @@ print("已知小问题：似乎此程序会先下载到根程序一个文件夹�
 print("下载器")
 print("v0.4")
 print("此版本为较大更新 优化了代码流程并增加了读取剪贴板的功能")
+print("感谢大佬TNTinMinecraft UID：182588195 帮助我完成了这个版本")
 
 import wget
 import urllib
