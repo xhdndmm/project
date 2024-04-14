@@ -20,6 +20,8 @@ print("感谢大佬TNTinMinecraft UID：182588195 帮助我完成了这个版本
 import wget
 import urllib
 import pyperclip
+#广告需要的模块 默认注释掉 如果你需要 可以取消注释
+#import webbrowser
 
 def download(url,file):
     wget.download(url,file)
@@ -71,4 +73,6 @@ def start ():
 while True:
     start()
     if input("是否要关闭程序（y/n）") == "y":
+        #以下为广告 默认注释掉 如果你需要 可以取消注释
+        #webbrowser.open('http://xhdndmm.eatuo.com:24/main.html')
         break
