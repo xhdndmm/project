@@ -1,0 +1,2 @@
+这个脚本适用于Debian系Linux系统并且有安装了CUDA12的N卡
+你还需要能正常连接GitHub和huggingface
