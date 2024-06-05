@@ -39,13 +39,15 @@ def networktest ():
     try:
         urllib.request.urlopen("http://www.baidu.com", timeout=5)
     except Exception:
-        with open('log.txt', 'w') as f:
-            f.write(time.time,"E:network error")
+        with open('log.txt', 'a') as f:
+            f.write("E:network error")
+            f.close
         print("网络异常")
         print("请检查网络连接是否正常")
     else:
-        with open('log.txt', 'w') as f:
-            f.write(time.time,"I:network OK")
+        with open('log.txt', 'a') as f:
+            f.write("I:network OK")
+            f.close
         print("网络正常")
 
 def download(url,file):
@@ -57,14 +59,19 @@ def main():
         file = input("下载路径？")
         try:
             download(url,file)
-            with open('log.txt', 'w') as f:
-                f.write(time.time,"I:download finish")
+            with open('log.txt', 'a') as f:
+                f.write("I:download finish")
+                f.close
         except Exception as e:
-            with open('log.txt', 'w') as f:
-                f.write(time.time,"E:",e)
+            with open('log.txt', 'a') as f:
+                f.write("E:" + str(e))
+                f.close
             print("出错啦 详细请看日志")
     else:
         networktest()
 
 while True:
+    with open('log.txt', 'a') as f:
+        f.write(str(time.asctime()))
+        f.close
     main()
