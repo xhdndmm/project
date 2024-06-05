@@ -33,18 +33,19 @@ print("此版本优化了代码流程并精简了功能")
                                                                                                  #######                                                                                                                      
 import wget
 import urllib
+import time
 
 def networktest ():
     try:
         urllib.request.urlopen("http://www.baidu.com", timeout=5)
     except Exception:
         with open('log.txt', 'w') as f:
-            f.write("E:network error")
+            f.write(time.time,"E:network error")
         print("网络异常")
         print("请检查网络连接是否正常")
     else:
         with open('log.txt', 'w') as f:
-            f.write("E:network error")
+            f.write(time.time,"I:network OK")
         print("网络正常")
 
 def download(url,file):
@@ -57,10 +58,10 @@ def main():
         try:
             download(url,file)
             with open('log.txt', 'w') as f:
-                f.write("I:download finish")
+                f.write(time.time,"I:download finish")
         except Exception as e:
             with open('log.txt', 'w') as f:
-                f.write("E:",e)
+                f.write(time.time,"E:",e)
             print("出错啦 详细请看日志")
     else:
         networktest()
