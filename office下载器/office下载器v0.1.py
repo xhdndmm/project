@@ -34,7 +34,7 @@ def download(url,file):
     try:
         wget.download(url,file)
     except Exception as e:
-        print("出错啦",e)
+        print("下载出错啦",e)
 
 def main():
     files = input("下载到哪个路径？")
